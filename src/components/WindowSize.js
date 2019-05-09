@@ -9,7 +9,7 @@ class WindowSize extends Component {
     };
   }
 
-  resize = () => {
+  resizeWindow = () => {
     this.forceUpdate();
     this.setState({
       windowWidth: window.innerWidth,
@@ -18,13 +18,11 @@ class WindowSize extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("resize", this.resize);
-    console.log(this.resize);
+    window.addEventListener("resize", this.resizeWindow);
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resize);
-    console.log(this.resize);
+    window.removeEventListener("resize", this.resizeWindow);
   }
 
   render() {
