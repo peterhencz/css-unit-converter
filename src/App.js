@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import WindowSize from "./components/WindowSize";
 import Input from "./components/Input";
 import Converter from "./components/Converter";
+import githubLogo from "./assets/Octocat.jpg";
 import "./App.css";
 
 class App extends Component {
@@ -44,7 +45,7 @@ class App extends Component {
     const { baseFontSize, dpi, vw, vh } = this.state;
     return (
       <div className="main-container">
-        css-unit-converter
+        css-unit-converter 🤘
         <WindowSize callbackFromParent={this.myCallback} />
         <div className="inputs">
           If your base font size is
@@ -67,6 +68,11 @@ class App extends Component {
           windowWidth={vw}
           windowHeight={vh}
         />
+        <a
+          href="https://github.com/peterhencz/css-unit-converter"
+          target="_blank">
+          <img class="octo" src={githubLogo} />
+        </a>
       </div>
     );
   }
