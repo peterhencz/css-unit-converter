@@ -5,14 +5,27 @@ class Converter extends Component {
     super(props);
     this.state = {
       rem: this.props.baseFontSize,
+      dpi: this.props.dpi,
       px: this.props.baseFontSize,
+      vw: this.props.windowWidth,
+      vh: this.props.windowHeight,
     };
     console.log(this.props);
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.baseFontSize !== prevProps.baseFontSize) {
-      this.setState({ rem: this.props.baseFontSize });
+    if (
+      this.props.baseFontSize !== prevProps.baseFontSize ||
+      this.props.dpi !== prevProps.dpi ||
+      this.props.windowWidth !== prevProps.windowWidth ||
+      this.props.windowHeight !== prevProps.windowHeight
+    ) {
+      this.setState({
+        rem: this.props.baseFontSize,
+        dpi: this.props.dpi,
+        vw: this.props.windowWidth,
+        vh: this.props.windowHeight,
+      });
     }
   }
 
@@ -27,22 +40,24 @@ class Converter extends Component {
   };
 
   render() {
-    const { rem, px } = this.state;
-    console.log(this.props);
+    const { rem, dpi, px, vw, vh } = this.state;
+    // console.log(this.props);
+    // console.log(this.state);
+    // console.log(this.convertToEm);
+    // console.log(window);
     console.log(this.state);
-    console.log(this.convertToEm);
-    console.log(window);
     return (
       <div>
-        units:
         <Input name="px" onChange={this.handleInputChange} />
+        units:
         <div className="units">
           <p>{rem} rem</p>
-          <p>{(this.state.px / this.state.rem).toFixed(2)} em</p>
-          <p>ch</p>
-          <p>vw</p>
-          <p>vh</p>
+          <p>{(px / rem).toFixed(2)} em</p>
+          <p>{((px / vw) * 100).toFixed(2)} vw</p>
+          <p>{((px / vh) * 100).toFixed(2)} vh</p>
           <p>cm</p>
+          <p>ch</p>
+          <p>vh</p>
           <p>in</p>
           <p>mm</p>
           <p>pc</p>

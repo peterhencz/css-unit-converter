@@ -9,15 +9,11 @@ class WindowSize extends Component {
     };
   }
 
-  resizeWindow = () => {
-    this.forceUpdate();
-    this.setState({
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-    });
-  };
-
   componentDidMount() {
+    this.props.callbackFromParent(
+      this.state.windowWidth,
+      this.state.windowHeight
+    );
     window.addEventListener("resize", this.resizeWindow);
   }
 
@@ -25,9 +21,20 @@ class WindowSize extends Component {
     window.removeEventListener("resize", this.resizeWindow);
   }
 
+  resizeWindow = () => {
+    this.forceUpdate();
+    this.setState({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight,
+    });
+    this.props.callbackFromParent(
+      this.state.windowWidth,
+      this.state.windowHeight
+    );
+  };
+
   render() {
     const { windowWidth, windowHeight } = this.state;
-    console.log(this.state);
     return (
       <div>
         your current window size is: {windowWidth} x {windowHeight}
