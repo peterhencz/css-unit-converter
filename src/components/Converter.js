@@ -47,9 +47,8 @@ class Converter extends Component {
     // console.log(window);
     console.log(this.state);
     return (
-      <div>
-        <Input name="px" onChange={this.handleInputChange} />
-        units:
+      <div className="converter">
+        <Input name="px" onChange={this.handleInputChange} /> pixels will be
         <div className="units">
           <p>{rem} rem</p>
           <p>{(px / rem).toFixed(2)} em</p>

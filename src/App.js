@@ -41,26 +41,25 @@ class App extends Component {
 
   render() {
     console.log(this.state);
-    console.log(window.devicePixelRatio);
     const { baseFontSize, dpi, vw, vh } = this.state;
     return (
       <div className="main-container">
         css-unit-converter 🤘
         <WindowSize callbackFromParent={this.myCallback} />
         <div className="inputs">
-          If your base font size is
+          If your base font-size is
           <Input
             name="baseFontSize"
             defaultValue={baseFontSize}
             onChange={this.handleInputChange}
-          />{" "}
-          pixel and your screen resolution is
+          />
+          pixels and your screen resolution is
           <Input
             name="dpi"
             defaultValue={dpi}
             onChange={this.handleInputChange}
           />{" "}
-          dpi, your css units are:
+          dpi,
         </div>
         <Converter
           baseFontSize={baseFontSize}
@@ -68,11 +67,11 @@ class App extends Component {
           windowWidth={vw}
           windowHeight={vh}
         />
-        <a
+        {/* <a
           href="https://github.com/peterhencz/css-unit-converter"
           target="_blank">
           <img class="octo" src={githubLogo} />
-        </a>
+        </a> */}
       </div>
     );
   }

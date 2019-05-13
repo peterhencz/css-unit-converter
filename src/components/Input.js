@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = props => (
   <div>
-    <input {...props} />
+    <input type="number" {...props} />
   </div>
 );
 
