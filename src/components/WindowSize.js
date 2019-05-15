@@ -37,7 +37,9 @@ class WindowSize extends Component {
     const { windowWidth, windowHeight } = this.state;
     return (
       <div>
-        your current window size is: {windowWidth} x {windowHeight}
+        <p>
+          your current window size is: {windowWidth} x {windowHeight} pixels
+        </p>
       </div>
     );
   }

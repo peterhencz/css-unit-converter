@@ -44,7 +44,7 @@ class App extends Component {
     const { baseFontSize, dpi, vw, vh } = this.state;
     return (
       <div className="main-container">
-        css-unit-converter 🤘
+        <h2>css-unit-converter 🤘</h2>
         <WindowSize callbackFromParent={this.myCallback} />
         <div className="inputs">
           If your base font-size is
@@ -53,13 +53,7 @@ class App extends Component {
             defaultValue={baseFontSize}
             onChange={this.handleInputChange}
           />
-          pixels and your screen resolution is
-          <Input
-            name="dpi"
-            defaultValue={dpi}
-            onChange={this.handleInputChange}
-          />{" "}
-          dpi,
+          pixels
         </div>
         <Converter
           baseFontSize={baseFontSize}
@@ -67,11 +61,18 @@ class App extends Component {
           windowWidth={vw}
           windowHeight={vh}
         />
-        {/* <a
+
+        <Input
+          name="dpi"
+          defaultValue={dpi}
+          onChange={this.handleInputChange}
+        />{" "}
+
+         <a
           href="https://github.com/peterhencz/css-unit-converter"
           target="_blank">
           <img class="octo" src={githubLogo} />
-        </a> */}
+        </a>
       </div>
     );
   }

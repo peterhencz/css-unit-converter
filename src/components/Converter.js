@@ -48,19 +48,24 @@ class Converter extends Component {
     console.log(this.state);
     return (
       <div className="converter">
-        <Input name="px" onChange={this.handleInputChange} /> pixels will be
         <div className="units">
-          <p>{rem} rem</p>
-          <p>{(px / rem).toFixed(2)} em</p>
-          <p>{((px / vw) * 100).toFixed(2)} vw</p>
-          <p>{((px / vh) * 100).toFixed(2)} vh</p>
-          <p>cm</p>
-          <p>ch</p>
-          <p>vh</p>
-          <p>in</p>
-          <p>mm</p>
-          <p>pc</p>
-          <p>pt</p>
+          <Input name="px" onChange={this.handleInputChange} /> pixels will be
+        </div>
+        <div className="units">
+          <p className="unit">{rem} rem</p>
+          <p className="unit">{(px / rem).toFixed(2)} em</p>
+          <p className="unit">{((px / vw) * 100).toFixed(2)} vw</p>
+          <p className="unit">{((px / vh) * 100).toFixed(2)} vh</p>
+        </div>
+        <div className="units">
+          <p>soon:</p>
+          <p className="unit units-disabled">cm</p>
+          <p className="unit units-disabled">ch</p>
+          <p className="unit units-disabled">vh</p>
+          <p className="unit units-disabled">in</p>
+          <p className="unit units-disabled">mm</p>
+          <p className="unit units-disabled">pc</p>
+          <p className="unit units-disabled">pt</p>
         </div>
       </div>
     );

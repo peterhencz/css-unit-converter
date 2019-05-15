@@ -13,7 +13,15 @@ body {
   text-align: center;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  color: #314351;
+}
+
 p {
+  color: #61717d;
   margin: 1em;
 }
 
@@ -23,9 +31,9 @@ input {
   font-family: "Open Sans", sans-serif;
   font-size: 1em;
   border: 1px solid grey;
-  margin: auto 1em;
+  margin: auto 0.5em;
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #ff5500;
 }
 
 .main-container {
@@ -41,10 +49,21 @@ input {
   align-items: center;
 }
 
+.unit {
+  font-size: 1.5em;
+  color: #314351;
+}
 .units {
+  margin: 1em auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.units-disabled {
+  font-size: 1em;
+  color: #9a9a9a;
+  font-style: italic;
 }
 
 .converter {
