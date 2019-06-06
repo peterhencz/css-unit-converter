@@ -61,17 +61,10 @@ class App extends Component {
           windowWidth={vw}
           windowHeight={vh}
         />
-
-        <Input
-          name="dpi"
-          defaultValue={dpi}
-          onChange={this.handleInputChange}
-        />{" "}
-
-         <a
+        <a
           href="https://github.com/peterhencz/css-unit-converter"
           target="_blank">
-          <img class="octo" src={githubLogo} />
+          <img class="octo" alt="github" src={githubLogo} />
         </a>
       </div>
     );
